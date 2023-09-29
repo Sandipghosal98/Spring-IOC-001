@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+		
+		<bean id="c" class="Cat" scope="prototype">
+		<property name="color" value="gray"></property>
+		<property name="name" value="pussy"></property>
+		<property name="age" value="22"></property>
+		</bean>
+		
+		<bean id="d" class="Dog">
+		<constructor-arg value="Voda" name="name"></constructor-arg>
+		<constructor-arg value="25" name="height"></constructor-arg>
+		<constructor-arg value="pug" name="breed"></constructor-arg>
+		</bean>
+		
+		<bean id="car" class="Car">
+		<property name="e" ref="en"></property>
+		</bean>
+		
+		<bean id="en" class="Engine"></bean>
+		
+		<bean id="os1" class="OS">
+		<property name="name" value="WINDOWS"></property>
+		</bean>
+		<bean id="os2" class="OS">
+		<property name="name" value="IOS"></property>
+		</bean>
+		
+		<bean id="l" class="Laptop">
+		<constructor-arg ref="os2"></constructor-arg>
+		</bean>
+</beans>
